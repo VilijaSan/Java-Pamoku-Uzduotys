@@ -13,6 +13,75 @@ public class Main {
             }
         }
         System.out.println(tinkamosRaides);
+        
+        
+        //Turime keturženklį skaičių, pvz.: 7135. Atskirkite visus skaitmenis į atskirus kintamuosius.
+        
+        int keturzenklis = 7135;
+
+        int pirmasSkaitmuo = keturzenklis / 1000;
+        int antrasSkaitmuo = keturzenklis % 1000 / 100;
+        int treciasSkaitmuo = keturzenklis % 1000 % 100 / 10;
+        int ketvirtasSkaitmuo = keturzenklis % 1000 % 100 % 10;
+
+        System.out.println(pirmasSkaitmuo + " " + antrasSkaitmuo + " " + treciasSkaitmuo + " " + ketvirtasSkaitmuo);
+        
+        
+        //Panaudodami masyvą arba listą atvaizduojame 100 vnt. atsitiktinai sugeneruotų skaičių
+        //nuo 1 iki 1000, kurie dalinasi iš 4.
+
+        List<Integer> skaiciuSarasas = new ArrayList<>();
+        int ivestasSkaicius;
+
+        while (skaiciuSarasas.size() < 100) {
+            ivestasSkaicius = sugeneruokAtsitiktiniSveikaSkaiciuReziuose(1, 1000);
+            if (ivestasSkaicius % 4 == 0) {
+                skaiciuSarasas.add(ivestasSkaicius);
+            }
+        }
+        System.out.println(skaiciuSarasas);
+        
+        
+        //Prašome įvesti du skaičius. Abu skaičiai privalo būti dviženkliai.
+        //Spausdiname visus skaičius tarp jų pagal tokią sąlygą: jeigu skaičius dalinasi iš 3, praleidžiame sekantį skaičių.
+
+        System.out.println("Iveskite pirma dvizenkli skaiciu");
+        int pirmasSkaicius = scanner.nextInt();
+        while (pirmasSkaicius < 10 || pirmasSkaicius > 99) {
+            System.out.println("Iveskite dvizenkli skaiciu");
+            pirmasSkaicius = scanner.nextInt();
+        }
+
+        System.out.println("Iveskite antra dvizenkli skaiciu");
+        int antrasSkaicius = scanner.nextInt();
+        while (antrasSkaicius < 10 || antrasSkaicius > 99) {
+            System.out.println("Iveskite dvizenkli skaiciu");
+            antrasSkaicius = scanner.nextInt();
+        }
+
+        for (int i = pirmasSkaicius; i <= antrasSkaicius; i++) {
+            System.out.print(i + " ");
+            if (i % 3 == 0) {
+                i++;
+            }
+        }
+        
+        
+        //Turime masyvą iš 4 elementų(1, 5, 7, 10 ). Surasti skaičius, kurių suma yra lygi 12 bei
+        //atspausdinti tų skaičių indeksus(šiuo atveju turėtų būti 1 ir 2 ).
+
+        int[] masyvas = {1, 5, 7, 10};
+        int skaiciuSuma;
+        int reikiamaSuma = 12;
+
+        for (int i = 0; i < masyvas.length; i++) {
+            for (int j = masyvas.length - 1; j > i; j--) {
+                skaiciuSuma = masyvas[i] + masyvas[j];
+                if (skaiciuSuma == reikiamaSuma) {
+                    System.out.println(i + " " + j);
+                }
+            }
+        }
    }
    
    
@@ -41,5 +110,11 @@ public class Main {
         }
 
         System.out.println(skaiciai);
+    }
+    
+    
+    public static int sugeneruokAtsitiktiniSveikaSkaiciuReziuose(int min, int max) {
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 }
