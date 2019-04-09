@@ -1,3 +1,11 @@
+//Žaidimui prasidėjus žaidėjas turi 100 pinigų, jo paklausiama ką jis nori daryti: 1 – žaisti, 2 –
+//pasiimti turimus ar likusius pinigus ir baigti žaidimą/programą.
+//Žaidėjui nusprendus žaisti jo paprašoma įvesti statymo sumą min – 5, max – 20 pinigų.
+//Turi būti tikrinimas ar įvedėte teisingą sumą ir statymo suma minusuojasi iš turimų pinigų.
+//Pastačius sumą prašoma įvesti skaičių nuo 1 iki 6, tuomet ridenamas kauliukas ir tikrinima ar
+//atspėjote skaičių, jei atspėjote suma dauginasi iš 6.
+//Žaidimas baigiamas tuomet kai žaidėjas nusprendžia pabaigti žaidimą arba baigiasi pinigai.
+
 import java.util.*;
 import java.util.Scanner;
 import java.util.Random;
