@@ -1,11 +1,3 @@
-import java.text.DecimalFormat;
-import java.util.*;
-import java.util.Random;
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-
         //Prašome vartotojo įdėti atsitiktinį kiekį pinigų, nuo 5 iki 10. Vartotojas įvesdamas skaičių įdeda monetas.
         //(Nominalai gali būti 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2 ). Monetas gali dėti tol, kol neįdėtaprašoma suma.
         // Jei įdėta nepakankamai - parašome kiek liko įdėti. Jei įdėta lygiai kiek reikia - parašome "Ačiū!".
@@ -13,7 +5,15 @@ public class Main {
         //P.S. Jei sumuojant gausis dideli skaičiai po kablelio ir nebus galimybės įdėti tiksliai tiek,
         //kad sistema parašytų "Ačiū!", tuomet visus skaičius esančius šiame uždavinyje
         //padauginame iš 100 ir visi kintamieji patampa int.
-        
+
+
+import java.text.DecimalFormat;
+import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {      
 
         int kiekPiniguIdeti = sugeneruokAtsitiktiniSveikaSkaiciuReziuose(5, 10);
         System.out.println("Idekite " + kiekPiniguIdeti + " pinigu");
