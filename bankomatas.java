@@ -1,5 +1,7 @@
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,6 +20,8 @@ public class Main {
 
         double piniguSuma = 0;
         double idetaMoneta;
+        
+        Scanner scanner = new Scanner(System.in);
 
         while (piniguSuma < kiekPiniguIdeti) {
             System.out.println("Dekite monetas:");
